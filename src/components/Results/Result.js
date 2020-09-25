@@ -1,12 +1,12 @@
 import React from "react";
 import { Spring } from "react-spring/renderprops";
-import styled from "styled-components";
+import { ResultWrapper } from './styled'
 
 function Result({ result, i }) {
     console.log('result', result);
 
     return (
-        <div style={{ display: 'inline-block' }}>
+        <ResultWrapper>
             <Spring
                 from={{ opacity: 0, transform: 'tanslateY(30px)' }}
                 to={{ opacity: 1, transform: 'tanslateY(0px)' }}
@@ -16,7 +16,7 @@ function Result({ result, i }) {
                 </div>
                 }
             </Spring>
-        </div>
+        </ResultWrapper>
     )
 }
 

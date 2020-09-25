@@ -1,12 +1,13 @@
 import React from 'react';
 import { getSearchResults } from './action';
 import { connect } from 'react-redux';
+import { SearchWrapper, InputStyle } from './styled';
 
 function Search(props) {
     return (
-        <div>
-            <input onChange={e => onInputChange(e, props)} />
-        </div>
+        <SearchWrapper>
+            <InputStyle onChange={e => onInputChange(e, props)} />
+        </SearchWrapper>
     )
 };
 

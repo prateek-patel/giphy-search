@@ -1,4 +1,4 @@
-import { takeLatest, put } from 'redux-saga/effects';
+import { debounce, put } from 'redux-saga/effects';
 import { setSearchResults } from "../action";
 import types from '../types';
 import axios from 'axios';
@@ -15,5 +15,5 @@ export function* setSearch({ value }) {
 }
 
 export default function* watchSearch() {
-    yield takeLatest(types.watchGetSearchResults, setSearch);
+    yield debounce(1000, types.watchGetSearchResults, setSearch);
 }

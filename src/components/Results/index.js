@@ -5,17 +5,17 @@ import { connect } from 'react-redux';
 function Results(props) {
     if (props.searchResults) {
         return (
-            <>
+            <div style={{ marginTop: 20 }}>
                 { renderSearchResults(props.searchResults) }
-            </>
+            </div>
         );
     }
     return null;
 }
 
 const renderSearchResults = searchResults => {
-    return searchResults.map(result => {
-        return <Result result={result} />
+    return searchResults.map((result, i) => {
+        return <Result i={i} result={result} />
     })
 };
 
